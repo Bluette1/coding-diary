@@ -1,3 +1,10 @@
+---
+title: Build a Microservices app using Python, Rails and React
+date: "2024-08-29T22:40:32.169Z"
+description: How to create a Microservices app using Python, Rails and React.
+---
+
+
 #  Microservices App Using Python, Rails and React
 
 Certainly! To build a Rails API and connect it to RabbitMQ, you'll need to follow these steps:

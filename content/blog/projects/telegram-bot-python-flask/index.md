@@ -1,3 +1,9 @@
+---
+title: Build a Telegram bot using Python and the Telegram API
+date: "2024-08-29T22:40:32.169Z"
+description: How to create an interractive Telegram bot using Python and the Telegram API.
+---
+
 To interact directly with the Telegram API without using a dispatcher or any library abstraction (such as `python-telegram-bot`), you'll need to make HTTP requests to the Telegram Bot API endpoints. Below is an example of how you can build a Telegram bot using Flask and direct API calls.
 
 ### Prerequisites:

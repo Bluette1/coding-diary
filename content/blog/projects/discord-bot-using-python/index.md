@@ -1,3 +1,10 @@
+---
+title: Build a Discord bot using Python
+date: "2024-08-29T22:40:32.169Z"
+description: How to create an interractive Discord bot.
+---
+
+
 To start your Discord bot, follow these steps:
 
 1. **Install Discord.py**: Ensure you have the `discord.py` library installed. You can do this using pip:
