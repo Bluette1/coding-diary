@@ -1,12 +1,9 @@
-{
-  "name": "gatsby-starter-blog",
+ {
+  "name": "coding-diary",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "This project is a simple yet effective tool for developers to keep track of their coding journey",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Marylene Sawyer <marylene.sawyer@gmail.com>",
   "dependencies": {
     "@fontsource/merriweather": "^5.0.8",
     "@fontsource-variable/montserrat": "^5.0.17",
