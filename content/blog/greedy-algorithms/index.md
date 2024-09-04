@@ -67,7 +67,9 @@ Given weights and values of items, determine the maximum value that can be accom
 Greedy algorithms are widely used because of their simplicity and efficiency in many practical applications.
 
 
-## Application Question
+## Application Questions
+
+### Minimum Number of Coins
 
 Write a function that takes in an array of N integers and performs a given operation k times. Afterwards return the outcome.
 
@@ -109,3 +111,87 @@ const amount = 6;
 const minCoinsRequired = minCoins(coins, amount);
 console.log(minCoinsRequired); // Output: 2
 ```
+
+### Maximum Number of Events
+A team organizing a university career fair has a list of companies along with their respective arrival time and duration to stay.
+Only one company can present at any time. Given each company arrival time and duration they will stay, determine the maximum number of presentation that can be hosted during the career fair.
+
+Constraint
+n = number of companies 1 <= n <= 50
+1 < arrival[i] < 1000
+1 < duration[i] < 1000
+Both arrival and duration must have an equal number of elements
+
+Example Input & Output
+
+n = 5
+arrival = [1, 3, 3, 5, 7]
+duration = [2, 2, 1, 2, 1]
+
+To determine the maximum number of presentations that can be hosted during the career fair, given the constraints and requirements, we can use a greedy algorithm. The goal is to maximize the number of non-overlapping presentations.
+
+Here's a step-by-step approach to solving the problem:
+
+### 1. **Understanding the Problem:**
+
+Each company has a specific arrival time and duration, which determines when it will start and when it will end. The key challenge is to schedule the maximum number of non-overlapping presentations.
+
+### 2. **Transform the Input:**
+
+You need to convert the input into intervals of time. For each company:
+- **Start Time:** `arrival[i]`
+- **End Time:** `arrival[i] + duration[i]`
+
+### 3. **Greedy Strategy:**
+
+The problem can be approached using a greedy algorithm that schedules presentations in a way that maximizes the number of presentations. Specifically:
+- **Sort the Presentations:** Sort all presentations based on their end times. This ensures that you always consider the earliest finishing presentation first.
+- **Select Presentations:** Iteratively select presentations that start after the last selected presentation ends.
+
+### 4. **Algorithm:**
+
+1. **Create a list of intervals** based on arrival times and durations.
+2. **Sort the intervals** by their end times.
+3. **Iterate through the sorted list** and select the presentations that do not overlap with the previously selected ones.
+
+Here’s a Python function that implements this approach:
+
+```python
+def max_presentations(arrival, duration):
+    n = len(arrival)
+    
+    # Create a list of (start_time, end_time) tuples
+    intervals = [(arrival[i], arrival[i] + duration[i]) for i in range(n)]
+    
+    # Sort intervals by end time
+    intervals.sort(key=lambda x: x[1])
+    
+    max_count = 0
+    last_end_time = 0
+    
+    # Iterate through the sorted intervals
+    for start, end in intervals:
+        if start >= last_end_time:
+            max_count += 1
+            last_end_time = end
+    
+    return max_count
+
+# Example usage
+arrival = [1, 3, 3, 5, 7]
+duration = [2, 2, 1, 2, 1]
+print(max_presentations(arrival, duration))  # Output: 4
+```
+
+### 5. **Explanation:**
+
+- **Step 1:** Convert the arrival times and durations into intervals with start and end times.
+- **Step 2:** Sort these intervals by their end times. This helps in maximizing the number of non-overlapping intervals because we always consider the interval that finishes the earliest.
+- **Step 3:** Use a greedy approach to select the maximum number of non-overlapping intervals by keeping track of the end time of the last selected interval and ensuring that each new interval starts after the last selected interval ends.
+
+### **Complexity:**
+
+- **Time Complexity:** Sorting the intervals takes \(O(n \log n)\), and iterating through the intervals takes \(O(n)\). Therefore, the overall time complexity is \(O(n \log n)\).
+- **Space Complexity:** Storing the intervals takes \(O(n)\) space.
+
+This approach efficiently solves the problem within the given constraints.
