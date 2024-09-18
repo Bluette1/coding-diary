@@ -1,6 +1,6 @@
 ---
 title: Hotwire & Stimulus in Rails Development
-date: "2024-08-29T22:40:32.169Z"
+date: "2024-09-18T22:40:32.169Z"
 description: The Role of Hotwire & Stimulus in Rails Development.
 ---
 

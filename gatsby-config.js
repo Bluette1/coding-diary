@@ -18,7 +18,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `marylenesawyer`,
-      linkedIn: `https://www.linkedin.com/in/marylene-sawyer/`,
+      linkedIn: `marylene-sawyer`,
       website: `https://portfolio-ms-app.onrender.com`
     },
   },
