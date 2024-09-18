@@ -12,7 +12,7 @@ module.exports = {
     title: `Coding Diary`,
     author: {
       name: `Marylene Sawyer`,
-      summary: `who lives and works in Cape Town building useful things.`,
+      summary: `is a web developer based in Cape Town, dedicated to building useful and impactful solutions. With a passion for technology and creativity, she enjoys crafting applications that enhance user experiences.`,
     },
     description: `A blog to keep track of what I'm currently doing and learning`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
