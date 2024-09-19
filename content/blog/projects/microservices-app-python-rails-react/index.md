@@ -191,6 +191,11 @@ To build a Rails API and connect it to RabbitMQ, you'll need to follow these ste
    bundle exec sidekiq
    ```
 
+  Note: Start the Redis server if it's not already running:
+  
+  ```bash
+  redis-server --daemonize yes
+  ```
 ### Summary
 
 You've now set up a Rails API connected to RabbitMQ. The Rails API handles message creation and publishes these messages to RabbitMQ. A Sidekiq worker consumes these messages for further processing. Adjust the RabbitMQ connection details and message handling according to your specific needs.

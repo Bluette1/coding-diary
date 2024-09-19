@@ -34,6 +34,15 @@ Hotwire and React serve similar purposes in that they both help developers creat
 
 In summary, while both Hotwire and React enable you to build interactive applications, they cater to different needs and development philosophies.
 
+### Key Points:
+Older versions of Rails did not use Hotwire by default. Hotwire was introduced with Rails 7, which came out in December 2021. 
+
+- **Prior to Rails 7**: Rails applications primarily relied on traditional server-side rendering and AJAX for interactivity. There was no built-in support for Hotwire.
+
+- **Hotwire**: It combines Turbo (for handling navigation and page updates) and Stimulus (for adding interactivity) to create a more seamless and efficient way to build web applications without heavily relying on JavaScript frameworks.
+
+In summary, Hotwire is a new addition to the Rails ecosystem starting with Rails 7, and it is not present in older versions.
+
 ### Learning Resources
 There are several great resources to help you learn Hotwire and Stimulus:
 
