@@ -1,11 +1,11 @@
 ---
-title: Build a Microservices app using Python, Rails and React
+title: Build a Microservices app using Python, Rails and Angular
 date: "2024-08-29T22:40:32.169Z"
 description: How to create a Microservices app using Python, Rails and React.
 ---
 
 
-#  Microservices App Using Python, Rails and React
+#  Microservices App Using Python, Rails and Angular
 
 To build a Rails API and connect it to RabbitMQ, you'll need to follow these steps:
 
@@ -159,7 +159,7 @@ To build a Rails API and connect it to RabbitMQ, you'll need to follow these ste
 
    ```ruby
    # Gemfile
-   gem 'sidekiq'
+   gem ' sidekiq'
    ```
 
    Create a Sidekiq worker (`app/workers/message_worker.rb`):
@@ -1788,3 +1788,5 @@ Log in to your Sentry dashboard to monitor errors, performance issues, and other
 6. **Monitor**: Use the Sentry dashboard to review and analyze captured events.
 
 By following these steps, you will have integrated Sentry with your Rails application, providing you with valuable insights into errors and performance issues.
+
+### Setting Up Devise
