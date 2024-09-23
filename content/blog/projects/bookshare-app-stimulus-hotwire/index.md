@@ -1,9 +1,9 @@
 ---
 title: Bookshare App Using Hotwire & Stimulus
 date: "2024-09-18T22:40:32.169Z"
-description: Build s Bookshare App Using Hotwire & Stimulus.
+description: Build a Bookshare App Using Hotwire & Stimulus.
 ---
-Sure! Here’s a step-by-step guide to start a Rails app project called **Book Share** that uses Hotwire and Stimulus for user accounts and sharing what users are reading.
+Here’s a step-by-step guide to start a Rails app project called **Book Share** that uses Hotwire and Stimulus for user accounts and sharing what users are reading.
 
 ### Step 1: Set Up Your Rails Environment
 

@@ -1,4 +1,4 @@
-Absolutely! Let’s walk through the entire process of setting up Devise with the `devise-api` gem in a Rails API application using Mongoid. 
+Let’s walk through the entire process of setting up Devise with the `devise-api` gem in a Rails API application using Mongoid. 
 
 ### Step-by-Step Setup
 
