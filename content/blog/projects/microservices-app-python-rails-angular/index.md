@@ -1,11 +1,8 @@
 ---
 title: Build a Microservices app using Python, Rails and Angular
 date: "2024-08-29T22:40:32.169Z"
-description: How to create a Microservices app using Python, Rails and React.
+description: How to create a Microservices app using Python, Rails and Angular.
 ---
-
-
-#  Microservices App Using Python, Rails and Angular
 
 To build a Rails API and connect it to RabbitMQ, you'll need to follow these steps:
 
@@ -191,18 +188,19 @@ To build a Rails API and connect it to RabbitMQ, you'll need to follow these ste
    bundle exec sidekiq
    ```
 
-  Note: Start the Redis server if it's not already running:
-  
-  ```bash
-  redis-server --daemonize yes
-  ```
+Note: Start the Redis server if it's not already running:
+
+```bash
+redis-server --daemonize yes
+```
+
 ### Summary
 
 You've now set up a Rails API connected to RabbitMQ. The Rails API handles message creation and publishes these messages to RabbitMQ. A Sidekiq worker consumes these messages for further processing. Adjust the RabbitMQ connection details and message handling according to your specific needs.
 
 ## Integrating with MongoDB
 
- To integrate RabbitMQ with a Rails API using Mongoid, follow these steps:
+To integrate RabbitMQ with a Rails API using Mongoid, follow these steps:
 
 ### 1. Set Up Your Rails API with Mongoid
 
@@ -385,6 +383,7 @@ You've now set up a Rails API connected to RabbitMQ using Mongoid for MongoDB in
 If you need more details on setting up MongoDB or RabbitMQ, or if you run into any issues, feel free to ask!
 
 ### Sending Messages
+
 Yes, you can definitely send emails whenever a message is created in your Rails API. You can achieve this by using Rails' built-in Action Mailer and integrating it into your message creation process. Here's a step-by-step guide on how to set this up:
 
 ### 1. Set Up Action Mailer
@@ -500,7 +499,7 @@ Yes, you can definitely send emails whenever a message is created in your Rails 
 
 ### Summary
 
-With these steps, you've integrated email notifications into your Rails API. Whenever a new message is created, an email will be sent to the recipient specified in the `MessageMailer` class. You can customize the email content and recipient based on your needs. 
+With these steps, you've integrated email notifications into your Rails API. Whenever a new message is created, an email will be sent to the recipient specified in the `MessageMailer` class. You can customize the email content and recipient based on your needs.
 
 If you encounter any issues or have additional questions, feel free to ask!
 
@@ -688,6 +687,7 @@ To integrate a background worker into a Rails application, you'll typically use 
 By offloading these tasks to background workers, you can ensure that your web application remains responsive and performant, even when handling time-consuming operations.
 
 ### Modifying Earlier Code
+
 - Yes, you can certainly send the email in the background worker after the message is published to RabbitMQ. This approach is useful for decoupling the email sending process from the HTTP request-response cycle, thus making the API more responsive. Here’s how you can adjust your code to achieve this:
 
 ### 1. **Modify the Background Worker to Send Emails**
@@ -791,7 +791,7 @@ class RabbitmqConsumerWorker
     queue.subscribe(block: true) do |delivery_info, properties, body|
       # Enqueue the email sending job
       SendEmailWorker.perform_async(body)
-      
+
       # Acknowledge message processing
       channel.ack(delivery_info.delivery_tag)
     end
@@ -819,6 +819,7 @@ Here’s how the flow works with the updated setup:
 This approach ensures that the API remains responsive, while the email sending is handled asynchronously in the background.
 
 ### Potential Features/Applications of a Python API
+
 In a microservices architecture where you have a Rails application handling job posts and a separate Python API, there are several services that the Python API could offer to complement or enhance the functionality of the Rails application. Here are some possible services the Python API could provide:
 
 ### 1. **Machine Learning and Data Analysis**
@@ -909,15 +910,18 @@ For seamless integration between the Rails application and the Python API:
 By defining these services, you can leverage Python’s strengths in areas like machine learning, NLP, and data analysis, while your Rails application focuses on job post management and user interactions.
 
 ### On Duplication
+
 While it’s technically possible for a Python API to duplicate the functionality of a Rails API, doing so is generally not ideal for several reasons. Here’s why it might be problematic and some alternative approaches you could consider:
 
 ### Why Duplication May Not Be Ideal
 
 1. **Redundancy and Maintenance Overhead:**
+
    - **Code Duplication:** Duplicating functionality across services leads to code redundancy. Maintaining and updating two sets of code can be cumbersome and error-prone.
    - **Consistency Issues:** Ensuring consistency between the two APIs can be challenging. Changes in business logic or data models need to be replicated across both services.
 
 2. **Increased Complexity:**
+
    - **Deployment and Monitoring:** Managing two services that essentially perform the same functions can complicate deployment and monitoring efforts.
    - **Debugging and Troubleshooting:** Identifying issues becomes more complex when you have two services performing similar tasks but potentially with slight differences in implementation.
 
@@ -930,18 +934,22 @@ While it’s technically possible for a Python API to duplicate the functionalit
 Instead of duplicating functionality, consider the following approaches:
 
 1. **Microservices Specialization:**
+
    - **Focused Responsibilities:** Assign specific responsibilities to each service. For instance, the Rails API could handle job posting and user management, while the Python API could focus on advanced analytics or machine learning tasks.
    - **Complementary Services:** Use the Python API for tasks that leverage Python’s strengths, such as natural language processing, machine learning, or complex data analysis.
 
 2. **API Gateway or Orchestrator:**
+
    - **Unified Interface:** Use an API Gateway to provide a single entry point for clients while internally routing requests to the appropriate service (Rails or Python).
    - **Service Coordination:** Implement an orchestrator to manage interactions between services and ensure a cohesive experience.
 
 3. **Shared Services and Libraries:**
+
    - **Common Libraries:** If both APIs need to perform similar tasks, consider creating shared libraries or services that encapsulate common functionality. These libraries can be used by both the Rails and Python services to maintain consistency and reduce duplication.
    - **Data Synchronization:** Implement data synchronization mechanisms to keep data consistent between services, if they need to access or modify shared data.
 
 4. **Integration Points:**
+
    - **Inter-service Communication:** Define clear API endpoints and use messaging or RPC (Remote Procedure Call) mechanisms to allow services to communicate and collaborate. For example, the Python service could process data and send results back to the Rails service.
    - **Asynchronous Processing:** Use background jobs or message queues for tasks that require coordination between services, such as processing data or handling notifications.
 
@@ -958,6 +966,7 @@ Here are a few scenarios where having both Rails and Python APIs can be benefici
 In summary, while it’s technically possible to have the Python API duplicate the Rails API’s functionality, it’s generally more efficient and maintainable to use the Python API for specialized tasks that complement the Rails API. This approach leverages the strengths of each technology and avoids unnecessary duplication of effort.
 
 ### Setting Up Job Application Follow Up Notification
+
 Setting up a notification system in your Python API to follow up with users after they've applied to a job post is a great idea. This can be accomplished by using the Python API to handle scheduling and sending notifications asynchronously, which offloads this responsibility from your Rails application and utilizes Python's strengths.
 
 Here’s a step-by-step guide on how to implement this:
@@ -1085,6 +1094,7 @@ Determine the logic for sending follow-up notifications, including:
 By using a Python API to handle notification scheduling and sending, you leverage Python’s capabilities for background processing and asynchronous tasks. This approach ensures that your Rails application remains responsive while handling follow-up notifications efficiently.
 
 ### Using RabbitMQ for Follow up Notifications
+
 Yes, you can definitely use a message broker like RabbitMQ (or any other message queue) to publish a message when a job application is submitted, which can then be consumed by a background worker in the Python API. This approach can be more scalable and decoupled compared to direct HTTP requests.
 
 Here’s how you can implement this:
@@ -1249,11 +1259,13 @@ By using RabbitMQ to publish messages from your Rails application and consume th
 This setup allows you to leverage the strengths of both Ruby on Rails and Python, and it ensures that the notification scheduling is handled efficiently and asynchronously.
 
 ### Integrating a Journaling System
+
 Integrating a journaling system into your Python application can be a great way to enhance the job search experience for users by allowing them to store and manage notes related to their job search. Here’s how you can design and implement a journaling system in the Python app:
 
 ### 1. **Design the Journaling System**
 
 #### **Features to Consider:**
+
 - **Create Notes:** Users can create, update, and delete notes.
 - **View Notes:** Users can view their notes, either as a list or individual entries.
 - **Search and Filter:** Users can search or filter notes based on keywords, dates, or tags.
@@ -1435,6 +1447,7 @@ To allow users to interact with their notes from the Rails app:
 Incorporating a journaling system into your Python API can greatly enhance the user experience by providing a dedicated space for users to manage their job search notes. By using RabbitMQ to decouple tasks and Flask for the API, you can ensure that the journaling system is both robust and scalable. Integrating this with your Rails application will offer a seamless experience for users to interact with their notes.
 
 ### Logging
+
 Adding logging to a Rails project is crucial for monitoring, debugging, and understanding the behavior of your application. Rails provides a built-in logging framework that is highly configurable. Here’s a guide on how to set up and use logging effectively in a Rails project:
 
 ### 1. **Basic Logging Configuration**
@@ -1662,6 +1675,7 @@ After setting up your logger, make sure to test it by triggering the relevant fu
 By configuring and using the logger appropriately, you can ensure that important messages and warnings are captured and recorded as expected.
 
 ### Logging With Sentry
+
 Integrating Sentry with a Rails application provides powerful error tracking and monitoring capabilities. Sentry helps you capture and manage exceptions, performance issues, and other application errors. Here's a step-by-step guide on how to set up Sentry in a Rails application:
 
 ### 1. **Create a Sentry Account and Project**
