@@ -1,8 +1,15 @@
-Creating a meditative app called "Still-Space" using React Native with Expo is a great idea! Below is a simplified outline of how you can implement this app, including code snippets to get you started. The app will display changing images from your API while playing background music.
+---
+title: Create a Meditation App Using React Native with Expo
+date: "2024-09-18T22:40:32.169Z"
+description: Walk Through how to Create a Meditation App Using React Native with Expo.
+---
+
+Creating a meditative app is a great idea! Below is a simplified outline of how you can implement such an app using React Native with Expo, including code snippets to get you started. The app will display changing images from your API while playing background music.
 
 ### Step 1: Setting Up Your Project
 
 1. **Create a new Expo project**:
+
    ```bash
    npx create-expo-app still-space
    cd still-space
@@ -21,77 +28,77 @@ Your app will have a main component that fetches images from the API and plays m
 ```jsx
 // App.js
 
-import React, { useEffect, useState } from 'react';
-import { View, Image, StyleSheet, Button } from 'react-native';
-import { Audio } from 'expo-av';
-import axios from 'axios';
+import React, { useEffect, useState } from "react"
+import { View, Image, StyleSheet, Button } from "react-native"
+import { Audio } from "expo-av"
+import axios from "axios"
 
 const StillSpace = () => {
-  const [images, setImages] = useState([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [sound, setSound] = useState();
+  const [images, setImages] = useState([])
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [sound, setSound] = useState()
 
   useEffect(() => {
-    fetchImages();
-    playSound();
-    
+    fetchImages()
+    playSound()
+
     // Change image every 5 seconds
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    
+      setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length)
+    }, 5000)
+
     return () => {
-      clearInterval(interval);
-      sound && sound.stopAsync();
-    };
-  }, [images, sound]);
+      clearInterval(interval)
+      sound && sound.stopAsync()
+    }
+  }, [images, sound])
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('YOUR_API_ENDPOINT');
-      setImages(response.data); // Assume the API returns an array of image URLs
+      const response = await axios.get("YOUR_API_ENDPOINT")
+      setImages(response.data) // Assume the API returns an array of image URLs
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   const playSound = async () => {
     const { sound } = await Audio.Sound.createAsync(
-      require('./assets/background-music.mp3') // Make sure you have this file in your assets
-    );
-    setSound(sound);
-    await sound.playAsync();
-  };
+      require("./assets/background-music.mp3") // Make sure you have this file in your assets
+    )
+    setSound(sound)
+    await sound.playAsync()
+  }
 
   return (
     <View style={styles.container}>
       {images.length > 0 && (
-        <Image 
-          source={{ uri: images[currentImageIndex] }} 
-          style={styles.image} 
-          resizeMode="cover" 
+        <Image
+          source={{ uri: images[currentImageIndex] }}
+          style={styles.image}
+          resizeMode="cover"
         />
       )}
       <Button title="Stop Music" onPress={() => sound && sound.stopAsync()} />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f0f0f0",
   },
   image: {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
+    width: "100%",
+    height: "100%",
+    position: "absolute",
   },
-});
+})
 
-export default StillSpace;
+export default StillSpace
 ```
 
 ### Step 3: Adding Background Music
@@ -105,6 +112,7 @@ export default StillSpace;
 ### Step 5: Run Your App
 
 Finally, run your app using the Expo CLI:
+
 ```bash
 npx expo start
 ```

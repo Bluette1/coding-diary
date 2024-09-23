@@ -1,3 +1,9 @@
+---
+title: Setting Up Rails With Devise Using the Devise Api Gem
+date: "2024-09-18T22:40:32.169Z"
+description: Set Up Rails With Devise Using the Devise Api Gem.
+---
+
 Let’s walk through the entire process of setting up Devise with the `devise-api` gem in a Rails API application using Mongoid. 
 
 ### Step-by-Step Setup
