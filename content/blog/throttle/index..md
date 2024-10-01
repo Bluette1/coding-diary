@@ -1,6 +1,6 @@
 ---
 title: Throttling
-date: "2024-9-27T22:40:32.169Z"
+date: "2024-09-29T22:40:32.169Z"
 description: Understanding Throttling in Programming.
 ---
 
