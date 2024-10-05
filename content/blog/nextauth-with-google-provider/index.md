@@ -62,4 +62,7 @@ In Google authentication, the ID Token and Access Token serve different purposes
 
 ### Further Reading
 https://next-auth.js.org/providers/google
-
+https://next-auth.js.org/configuration/options#session
+https://next-auth.js.org/v3/tutorials/refresh-token-rotation
+https://next-auth.js.org/getting-started/client#refetch-interval
+https://next-auth.js.org/getting-started/client
