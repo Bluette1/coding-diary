@@ -1,6 +1,6 @@
 ---
 title: Software Development Methodology
-date: "2024-10-04T22:40:32.169Z"
+date: "2024-10-05T22:40:32.169Z"
 description: How to Effectively Develop Software
 
 ---
