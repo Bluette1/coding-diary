@@ -1,6 +1,6 @@
 ---
 title: Behavior-Driven Development Versus Test-Driven Development
-date: "2024-10-4T22:40:32.169Z"
+date: "2024-10-04T22:40:32.169Z"
 description: Comparing Behavior-Driven Development to Test-Driven Development.
 ---
 

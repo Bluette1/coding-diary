@@ -1,6 +1,6 @@
 ---
 title: Using ChatGPT as a Tool in Software Development
-date: "2024-10-4T22:40:32.169Z"
+date: "2024-10-05T22:40:32.169Z"
 description: How to Effectively Use ChatGPT as a Tool in Software Development.
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Test-Driven Development
-date: "2024-10-4T22:40:32.169Z"
+date: "2024-10-04T22:40:32.169Z"
 description: Guidelines and The Why for Using Test-Driven Development.
 ---
 
