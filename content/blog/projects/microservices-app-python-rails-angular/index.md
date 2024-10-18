@@ -1804,3 +1804,107 @@ Log in to your Sentry dashboard to monitor errors, performance issues, and other
 By following these steps, you will have integrated Sentry with your Rails application, providing you with valuable insights into errors and performance issues.
 
 ### Setting Up Devise
+
+
+
+### Automating Emails Using Python Script
+
+Automating the sending of daily email reports in Python involves a few steps. Below is a simple script using the `smtplib` library to send emails, along with a walkthrough to set it up.
+
+### Step 1: Install Required Libraries
+
+If you haven't already, make sure you have Python installed. You can install any additional libraries using pip if needed (though `smtplib` is part of the standard library).
+
+```bash
+pip install yagmail
+```
+
+### Step 2: Create the Python Script
+
+Here's a basic script that sends an email with a report. We'll use `yagmail`, which simplifies sending emails.
+
+```python
+import yagmail
+import datetime
+
+def send_daily_report():
+    # Email credentials
+    email_address = "your_email@gmail.com"
+    email_password = "your_password"  # Consider using an app password for security
+    
+    # Create a Yagmail client
+    yag = yagmail.SMTP(email_address, email_password)
+    
+    # Email details
+    recipient = "recipient@example.com"
+    subject = f"Daily Report - {datetime.date.today()}"
+    
+    # Here you can generate your report content
+    report_content = "This is your daily report:\n\n"
+    report_content += "Add your report data here."
+    
+    # Send the email
+    yag.send(
+        to=recipient,
+        subject=subject,
+        contents=report_content
+    )
+    print(f"Daily report sent to {recipient}.")
+
+if __name__ == "__main__":
+    send_daily_report()
+```
+
+### Step 3: Set Up Email Credentials
+
+1. **Create an Email Account**: If you don't want to use your personal email, consider creating a dedicated email account for sending reports.
+  
+2. **Allow Less Secure Apps**: For Gmail, you might need to allow access for less secure apps or set up an app password:
+   - Go to your Google account settings.
+   - Under "Security," look for "App passwords" to generate a specific password for this script.
+  
+3. **Replace Credentials**: In the script, replace `your_email@gmail.com` and `your_password` with your actual email and the password or app password.
+
+### Step 4: Test the Script
+
+Run the script to ensure it's working properly:
+
+```bash
+python send_daily_report.py
+```
+
+You should see a confirmation message, and the recipient should receive the email.
+
+### Step 5: Schedule the Script to Run Daily
+
+To run this script automatically every day, you can use a task scheduler:
+
+- **On Windows**: Use Task Scheduler.
+- **On macOS/Linux**: Use `cron`.
+
+#### Example of Setting Up a Cron Job (macOS/Linux)
+
+1. Open your terminal.
+2. Type `crontab -e` to edit your crontab file.
+3. Add a line to schedule your script. For example, to run it every day at 8 AM:
+
+   ```bash
+   0 8 * * * /usr/bin/python3 /path/to/your/send_daily_report.py
+   ```
+
+   Make sure to replace `/usr/bin/python3` with the path to your Python executable and `/path/to/your/send_daily_report.py` with the path to your script.
+
+### Step 6: Monitor the Script
+
+After setting it up, keep an eye on the email delivery to ensure it's working as expected. You may want to log errors or successes for debugging.
+
+### Security Note
+
+Always be cautious about hardcoding credentials in your scripts. For enhanced security, consider using environment variables or a configuration file that isn't included in version control.
+
+### Conclusion
+
+That's it! You've now set up a Python script to automate sending daily email reports. If you have further questions or need adjustments, feel free to ask!
+
+# Online sources for Design Inspiration
+https://cssgradient.io/blog/unique-design-inspiration/

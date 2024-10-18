@@ -124,4 +124,5 @@ npx expo start
 3. **Offline Support**: Cache images and music for offline access.
 4. **User Feedback**: Implement feedback options for users to suggest images or music.
 
-This setup gives you a foundational structure for your meditative app, "Still-Space." Feel free to expand on it with more features and customization options!
+## Naming
+I'll probably call it Vibes.
