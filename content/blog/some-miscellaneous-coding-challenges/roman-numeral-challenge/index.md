@@ -74,12 +74,59 @@ print(roman_challenge("DDLL"))              # Output: MCXn0vX3cX4ll
 
 ---
 
-### Explanation:
 
-1. **Input:** The function takes a string of Roman numerals.
-2. **Processing:**
-   - We create a dictionary to map Roman numerals to their integer values.
-   - We convert the Roman numeral string to its integer equivalent by iterating through the string.
-   - We then convert the integer back to its simplified Roman numeral form using a predefined list of numeral pairs.
-   - After obtaining the simplified numeral string, we concatenate it with the `ChallengeToken` and replace every **third** character in the resulting string with an `'X'`.
-3. **Output:** The final transformed string is returned.
+### Roman Numeral Challenge Explained
+
+**What’s the Problem?**
+
+You need to take a string of Roman numerals (like "III" for 3 or "IV" for 4) and convert it into a simpler form. For example, if the input is "LLLXXXVVVV", which represents 200, you should return "CC", because that's the simplest way to write 200 using Roman numerals.
+
+**How Does It Work?**
+
+1. **Understanding Roman Numerals:**
+   - Roman numerals use letters to represent numbers:
+     - I = 1
+     - V = 5
+     - X = 10
+     - L = 50
+     - C = 100
+     - D = 500
+     - M = 1000
+
+2. **Converting Roman to Number:**
+   - The first step is to change the string of Roman numerals into a regular number. For example, "XXX" means 10 + 10 + 10 = 30.
+
+3. **Simplifying the Number:**
+   - After you have the number, you convert it back into the simplest Roman numeral form. Using our earlier example, 200 is "CC".
+
+4. **Formatting the Output:**
+   - Finally, you take the simplified Roman numeral and add a special token (like a password) to it. Then, every third character in this new string is replaced with an 'X'. 
+
+### Example Breakdown
+
+Let’s say the input is `"XXXVVIIIIIIIIII"`:
+
+1. **Convert to Number:**
+   - "XXX" = 30
+   - "VV" = 10
+   - "IIIIIIIIII" = 10
+   - Total = 30 + 10 + 10 = 50
+
+2. **Convert to Simplified Roman:**
+   - 50 is "L".
+
+3. **Add the Token:**
+   - Token = "myn0v3ch4ll"
+   - Combine: "L" + "myn0v3ch4ll" = "Lmyn0v3ch4ll".
+
+4. **Replace Every Third Character:**
+   - The final string becomes "LlXn0vX3hX4ll".
+
+### Code Summary
+
+Here’s how the code works in simple steps:
+
+- **Mapping:** It creates a dictionary that links Roman numerals to their values.
+- **Conversion:** It loops through the input string, adding up the values to get a total number.
+- **Simplification:** It uses a list to break that total back down into the simplest Roman numerals.
+- **Output:** Finally, it formats the output by adding a token and replacing every third character with 'X'.
