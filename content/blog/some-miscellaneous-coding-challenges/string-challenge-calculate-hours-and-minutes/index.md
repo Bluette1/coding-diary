@@ -1,4 +1,3 @@
-
 ---
 
 Title: String Challenge - Calculate Days and Hours  

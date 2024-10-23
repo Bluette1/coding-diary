@@ -1,4 +1,3 @@
-
 ---
 
 Title: Roman Numeral Challenge - Simplify Roman Numerals  

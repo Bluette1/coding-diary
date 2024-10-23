@@ -1,4 +1,3 @@
-
 ---
 
 Title: Stock Trading Challenge - Calculate Maximum Profit  
