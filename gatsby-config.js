@@ -19,7 +19,7 @@ module.exports = {
     social: {
       twitter: `marylenesawyer`,
       linkedIn: `marylene-sawyer`,
-      website: `https://portfolio-ms-app.onrender.com`
+      website: `https://marylene.tech.com`
     },
   },
   plugins: [
