@@ -1,7 +1,7 @@
 ---
-Title: Stock Trading Challenge - Calculate Maximum Profit  
-Date: "2024-10-22T22:40:32.169Z"  
-Description: How to Solve the Problem - `Calculate Maximum Profit`.
+title: Stock Trading Challenge - Calculate Maximum Profit  
+date: "2024-10-22T22:40:32.169Z"  
+description: How to Solve the Problem - Calculate Maximum Profit.
 ---
 
 # Stock Trading Challenge
