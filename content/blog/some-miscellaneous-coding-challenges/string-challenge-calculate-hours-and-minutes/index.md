@@ -1,9 +1,9 @@
 
 ---
 
-### Title: String Challenge - Calculate Days and Hours  
-**Date**: "2024-10-22T22:40:32.169Z"  
-**Description**: How to Solve the Problem - `Calculate Days and Hours`.
+Title: String Challenge - Calculate Days and Hours  
+Date: "2024-10-22T22:40:32.169Z"  
+Description: How to Solve the Problem - `Calculate Days and Hours`.
 
 ---
 
