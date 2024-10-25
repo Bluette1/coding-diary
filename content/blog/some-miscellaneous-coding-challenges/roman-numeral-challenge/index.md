@@ -127,3 +127,9 @@ Here’s how the code works in simple steps:
 - **Conversion:** It loops through the input string, adding up the values to get a total number.
 - **Simplification:** It uses a list to break that total back down into the simplest Roman numerals.
 - **Output:** Finally, it formats the output by adding a token and replacing every third character with 'X'.
+
+### Time Complexity
+O(n), where n is the length of the input string.
+
+### Space Complexity
+O(n), for the output string.

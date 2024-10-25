@@ -75,3 +75,6 @@ print(stock_profit([50, 60, 50, 70]))           # Output: 20mXn0vX3cX4ll
    - After the loop, we convert `max_profit` to a string and concatenate it with the `ChallengeToken`.
    - Finally, we replace every **4th** character in the concatenated string with an `'X'`.
 3. **Output:** The final transformed string is returned.
+
+### Time Complexity
+This solution uses a single pass through the array, resulting in a time complexity of O(n), where n is the length of the array.

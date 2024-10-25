@@ -61,3 +61,22 @@ print(string_challenge(123)) # Output: 5:Y3xYz9Y7aYc
    - Every **4th** character in the final concatenated string is replaced with `'Y'`.
 3. **Output:** The transformed string is returned as the final result.
 
+### Time Complexity:
+
+The time complexity of the string_challenge function is O(n), where n is the length of the output string.
+
+*Breakdown*
+
+1. Time calculation: O(1) (constant time)
+2. String formatting: O(n) (proportional to the length of the output string)
+3. Concatenation: O(n) (proportional to the length of the ChallengeToken)
+4. Character replacement: O(n) (proportional to the length of the output string)
+
+*Dominant Factor*
+The dominant factor is the character replacement operation, which iterates over the entire output string.
+
+*Space Complexity*
+The space complexity is also O(n), as a new string is created for the output.
+
+This solution is efficient, with a linear time complexity.
+
