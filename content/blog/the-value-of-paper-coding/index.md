@@ -1,5 +1,5 @@
 ---
-title: The Value of Paper Coding: Insights from Gayle Laakmann McDowell
+title: "The Value of Paper Coding: Insights from Gayle Laakmann" McDowell
 date: "2024-10-05T22:40:32.169Z"
 description: Is Paper Coding Still Fashionable?
 ---
