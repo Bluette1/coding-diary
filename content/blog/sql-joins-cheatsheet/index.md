@@ -1,3 +1,4 @@
+---
 title: SQL Joins Cheatsheet
 date: "2024-10-28T22:40:32.169Z"
 description: A concise cheatsheet on SQL joins
