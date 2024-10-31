@@ -19,7 +19,7 @@ module.exports = {
     social: {
       twitter: `marylenesawyer`,
       linkedIn: `marylene-sawyer`,
-      website: `https://marylene.tech.com`
+      website: `https://marylene.tech`
     },
   },
   plugins: [
