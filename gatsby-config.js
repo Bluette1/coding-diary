@@ -12,7 +12,7 @@ module.exports = {
     title: `Coding Diary`,
     author: {
       name: `Marylene Sawyer`,
-      summary: `is a web developer based in Cape Town, dedicated to building useful and impactful solutions. With a passion for technology and creativity, she enjoys crafting applications that enhance user experiences.`,
+      summary: `is a web developer dedicated to building useful and impactful solutions. With a passion for technology and creativity, she enjoys crafting applications that enhance user experiences. Marylene combines her technical expertise with a keen eye for design, striving to create intuitive and engaging interfaces that meet the needs of users.`,
     },
     description: `A blog to keep track of what I'm currently doing and learning`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
